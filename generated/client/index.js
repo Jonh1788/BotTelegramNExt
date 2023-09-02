@@ -153,6 +153,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -162,7 +163,8 @@ const config = {
     }
   },
   "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQ0KDQpnZW5lcmF0b3IgY2xpZW50IHsNCiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyINCiAgb3V0cHV0ICAgPSAiLi9nZW5lcmF0ZWQvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCINCiAgdXJsID0gZW52KCJQT1NUR1JFU19QUklTTUFfVVJMIikgLy8gdXNlcyBjb25uZWN0aW9uIHBvb2xpbmcNCiAgZGlyZWN0VXJsID0gZW52KCJQT1NUR1JFU19VUkxfTk9OX1BPT0xJTkciKSAvLyB1c2VzIGEgZGlyZWN0IGNvbm5lY3Rpb24NCn0NCg0KbW9kZWwgVGVsZWdyYW0gew0KICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRleHQgICAgICBTdHJpbmc/DQogIGZpbGVVcmwgICBTdHJpbmc/DQogIGJ1dHRvblRleHQgU3RyaW5nPw0KICBidXR0b25MaW5rIFN0cmluZz8NCiAgdHlwZSAgICAgICBTdHJpbmc/DQoNCn0=",
-  "inlineSchemaHash": "3d4f33d99df9edf3d71500e121a3232e911922f0891b0485ef73a097e15ba762"
+  "inlineSchemaHash": "3d4f33d99df9edf3d71500e121a3232e911922f0891b0485ef73a097e15ba762",
+  "noEngine": false
 }
 
 const fs = require('fs')
