@@ -4,6 +4,7 @@ import { NextResponse } from "next/server"
 import { Buffer } from 'buffer';
 import { decode } from 'node-base64-image';
 import { writeFile } from "fs/promises";
+import prisma from "@/lib/prisma";
 
 function makeid(length = 10) {
         var result = '';
@@ -56,8 +57,19 @@ export async function POST(request) {
                        
 
                        
-
-                       await adicionarItem(dadosObjeto)
+                        
+                       
+                        await prisma.telegram.create({
+                        data: { 
+                                text: dadosObjeto.text || null,
+                                fileUrl: dadosObjeto.fileUrl || null,
+                                buttonText: dadosObjeto.buttonText || null,
+                                buttonLink: dadosObjeto.buttonLink || null,
+                                type: dadosObjeto.type},
+                               
+                        
+                       
+                       })
 
                         return new Response(JSON.stringify({sucess: "Sucessful"}))
                 } catch (err) {
@@ -76,7 +88,7 @@ export async function POST(request) {
 export async function GET() {
 
         try{
-                const dados = await pegarTodosItems()
+                const dados = await prisma.telegram.findMany()
                 return NextResponse.json({dados}, {status:200})
 
         }catch (err) {

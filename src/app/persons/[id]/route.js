@@ -1,6 +1,7 @@
 import { deletarUmItem, pegarUmItem } from "@/utils/db"
 import { NextResponse } from "next/server"
 import  fs  from 'fs'
+import prisma from "@/lib/prisma"
 
 export async function GET(request, { params }){
 
@@ -9,7 +10,11 @@ export async function GET(request, { params }){
 
     try {
         
-        const dados = await pegarUmItem(id)
+        const dados = await prisma.telegram.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        })
         return NextResponse.json({ dados }, { status: 200 })
 
     } catch (err) {
@@ -26,7 +31,12 @@ export async function DELETE(request, { params }){
 
     try {
 
-        const item = await pegarUmItem(id)
+        const item = await prisma.telegram.findUnique({
+            where: {
+                id: parseInt(id)
+            }
+        })
+
         const itemDeletar = item?.fileUrl
         console.log(itemDeletar)
         if(itemDeletar){
@@ -39,7 +49,11 @@ export async function DELETE(request, { params }){
             })
         }
 
-        await deletarUmItem(id)
+        await prisma.telegram.delete({
+            where: {
+                id: Number(id)
+            }
+        })
         return NextResponse.json({ status: 200 })
 
     } catch (err) {
