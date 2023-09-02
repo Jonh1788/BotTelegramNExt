@@ -80,6 +80,9 @@ Prisma.NullTypes = {
  * Enums
  */
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
 });
 
@@ -95,6 +98,11 @@ exports.Prisma.TelegramScalarFieldEnum = {
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
 };
 
 exports.Prisma.NullsOrder = {
@@ -134,7 +142,8 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": "../../.env",
+    "schemaEnvPath": "../../.env"
   },
   "relativePath": "../..",
   "clientVersion": "5.2.0",
@@ -142,19 +151,17 @@ const config = {
   "datasourceNames": [
     "db"
   ],
-  "activeProvider": "sqlite",
-  "postinstall": false,
+  "activeProvider": "postgresql",
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": null,
-        "value": "file:./public/banco.db"
+        "fromEnvVar": "POSTGRES_PRISMA_URL",
+        "value": null
       }
     }
   },
-  "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQ0KDQpnZW5lcmF0b3IgY2xpZW50IHsNCiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyINCiAgb3V0cHV0ICAgPSAiLi9nZW5lcmF0ZWQvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAic3FsaXRlIg0KICB1cmwgICAgICA9ICJmaWxlOi4vcHVibGljL2JhbmNvLmRiIiAvLyBDYW1pbmhvIHBhcmEgbyBzZXUgYXJxdWl2byBTUUxpdGUgZXhpc3RlbnRlDQp9DQoNCm1vZGVsIFRlbGVncmFtIHsNCiAgaWQgICAgICAgIEludCBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQ0KICB0ZXh0ICAgICAgU3RyaW5nPw0KICBmaWxlVXJsICAgU3RyaW5nPw0KICBidXR0b25UZXh0IFN0cmluZz8NCiAgYnV0dG9uTGluayBTdHJpbmc/DQogIHR5cGUgICAgICAgU3RyaW5nPw0KDQp9",
-  "inlineSchemaHash": "045cbdd1082ea1aba8601ea8993314041c7983228973f762354eb9c24b503a67",
-  "noEngine": false
+  "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQ0KDQpnZW5lcmF0b3IgY2xpZW50IHsNCiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyINCiAgb3V0cHV0ICAgPSAiLi9nZW5lcmF0ZWQvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCINCiAgdXJsID0gZW52KCJQT1NUR1JFU19QUklTTUFfVVJMIikgLy8gdXNlcyBjb25uZWN0aW9uIHBvb2xpbmcNCiAgZGlyZWN0VXJsID0gZW52KCJQT1NUR1JFU19VUkxfTk9OX1BPT0xJTkciKSAvLyB1c2VzIGEgZGlyZWN0IGNvbm5lY3Rpb24NCn0NCg0KbW9kZWwgVGVsZWdyYW0gew0KICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRleHQgICAgICBTdHJpbmc/DQogIGZpbGVVcmwgICBTdHJpbmc/DQogIGJ1dHRvblRleHQgU3RyaW5nPw0KICBidXR0b25MaW5rIFN0cmluZz8NCiAgdHlwZSAgICAgICBTdHJpbmc/DQoNCn0=",
+  "inlineSchemaHash": "3d4f33d99df9edf3d71500e121a3232e911922f0891b0485ef73a097e15ba762"
 }
 config.dirname = '/'
 
@@ -163,7 +170,9 @@ defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 
 
 config.injectableEdgeEnv = () => ({
-  parsed: {}
+  parsed: {
+    POSTGRES_PRISMA_URL: typeof globalThis !== 'undefined' && globalThis['POSTGRES_PRISMA_URL'] || typeof process !== 'undefined' && process.env && process.env.POSTGRES_PRISMA_URL || undefined
+  }
 })
 
 if (typeof globalThis !== 'undefined' && globalThis['DEBUG'] || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined) {
