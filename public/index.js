@@ -95,7 +95,74 @@ function enviarItens(dados) {
 
 }
 
+//💥🤑💣🧭🎪🚨 ⭐ 🔥📱🔎⬆⬇⚠🟦💎🖥
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max)
+}
+
+function enviarMines() {
+    const primeiraMensagem = "🔥🔥 Entrada Próxima 🔥🔥"
+    const segundaMensagem = `⭐ Mines - entrada em 1 minuto\n🔎Analisando TxID da casa.\n`
+
+    const gerarMines = () => {
+
+        const minas = 4
+        const objetos = []
+        for(let i = 0; i < minas; i++){
+
+            const objeto = {
+                primeiro: getRandomInt(minas),
+                segundo: getRandomInt(minas)
+            }
+
+            objetos.push(objeto)
+        }
+
+        let minesString = ""
+        for(let i = 0; i < 5; i++){
+            externo: for(let y = 0; y < 5; y++){
+
+                 for(let x = 0; x < objetos.length; x++) {
+
+                    if(objetos[x].primeiro === i && objetos[x].segundo === y){
+                        minesString += "⭐ "
+                        continue externo
+                                            
+                    } 
+
+                    
+                };
+
+                minesString += "🟦 "
+
+            }
+
+            minesString += "\n"
+        }
+
+        return minesString
+    }
+
+    const agora = new Date()
+    agora.setMinutes(agora.getMinutes() + 2)
+    const hora = agora.getHours().toString().padStart(2, '0')
+    const minutos = agora.getMinutes().toString().padStart(2, '0')
+    const horaAtual = `${hora}:${minutos}`
+    const mines = "✅ Entrada confirmada  ✅\n\n" 
+    + gerarMines() + "\n\n💣Minas: 3\n🎮Tentativas: 3\nVálido até:" + horaAtual + "\n\n💎 Jogue clicando aqui👉\n\n⭐Clique acima para abrir o mines👆"
+
+    
+    bot.telegram.sendMessage("-1001985578363", {text: primeiraMensagem, parse_mode: 'markdown'})
+
+    setTimeout(() => {
+        bot.telegram.sendMessage("-1001985578363", {text: segundaMensagem, parse_mode: 'markdown'})
+    }, 1000 * 60)
+
+    setTimeout(() => {
+        bot.telegram.sendMessage("-1001985578363", {text: mines, parse_mode: 'markdown'})
+    }, 2000 * 60)
+}
 
 async function iniciarBot() {
 
@@ -105,18 +172,24 @@ async function iniciarBot() {
         })
 
     let index = 0
-    const intervaloEmSegundos = 10
+    const intervaloEmSegundos = 60
 
-    function enviarItem(){
+    async function enviarItem(){
         if(index < dados.length){
             enviarItens(dados[index])
             index++
         } else {
-            clearInterval(intervalID)
+
+            await pegarTodosItems().then(result => {
+                dados = result
+            })
+    
+            index = 0
         }
     }
 
-    const intervalID = setInterval(enviarItem, intervaloEmSegundos * 1000)
+    setInterval(enviarItem, 4000 * 60)
+    setInterval(enviarMines, 3500 * 60)
 
    
 }
