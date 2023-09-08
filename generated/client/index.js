@@ -126,7 +126,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/BotTelegramNExt/generated/client",
+      "value": "C:\\Users\\Jonh\\Desktop\\BotTelegramNext\\nexttelegramapp\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -135,7 +135,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
@@ -162,22 +162,8 @@ const config = {
       }
     }
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
   "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQ0KDQpnZW5lcmF0b3IgY2xpZW50IHsNCiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyINCiAgb3V0cHV0ICAgPSAiLi9nZW5lcmF0ZWQvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCINCiAgdXJsID0gZW52KCJQT1NUR1JFU19QUklTTUFfVVJMIikgLy8gdXNlcyBjb25uZWN0aW9uIHBvb2xpbmcNCiAgZGlyZWN0VXJsID0gZW52KCJQT1NUR1JFU19VUkxfTk9OX1BPT0xJTkciKSAvLyB1c2VzIGEgZGlyZWN0IGNvbm5lY3Rpb24NCn0NCg0KbW9kZWwgVGVsZWdyYW0gew0KICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRleHQgICAgICBTdHJpbmc/DQogIGZpbGVVcmwgICBTdHJpbmc/DQogIGJ1dHRvblRleHQgU3RyaW5nPw0KICBidXR0b25MaW5rIFN0cmluZz8NCiAgdHlwZSAgICAgICBTdHJpbmc/DQoNCn0=",
   "inlineSchemaHash": "3d4f33d99df9edf3d71500e121a3232e911922f0891b0485ef73a097e15ba762",
-=======
-  "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQoKZ2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuL2dlbmVyYXRlZC9jbGllbnQiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInNxbGl0ZSIKICB1cmwgICAgICA9ICJmaWxlOi4vcHVibGljL2JhbmNvLmRiIiAvLyBDYW1pbmhvIHBhcmEgbyBzZXUgYXJxdWl2byBTUUxpdGUgZXhpc3RlbnRlCn0KCm1vZGVsIFRlbGVncmFtIHsKICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCiAgdGV4dCAgICAgIFN0cmluZz8KICBmaWxlVXJsICAgU3RyaW5nPwogIGJ1dHRvblRleHQgU3RyaW5nPwogIGJ1dHRvbkxpbmsgU3RyaW5nPwogIHR5cGUgICAgICAgU3RyaW5nPwoKfQ==",
-  "inlineSchemaHash": "9dab3f10ad667b1c6691ddef0c09db915225c9f3cdaf6af9a65f5d05c78557b7",
->>>>>>> f9fea60 (Melhorado e funcional)
-=======
-  "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQoKZ2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuL2dlbmVyYXRlZC9jbGllbnQiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInNxbGl0ZSIKICB1cmwgICAgICA9ICJmaWxlOi4vcHVibGljL2JhbmNvLmRiIiAvLyBDYW1pbmhvIHBhcmEgbyBzZXUgYXJxdWl2byBTUUxpdGUgZXhpc3RlbnRlCn0KCm1vZGVsIFRlbGVncmFtIHsKICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCiAgdGV4dCAgICAgIFN0cmluZz8KICBmaWxlVXJsICAgU3RyaW5nPwogIGJ1dHRvblRleHQgU3RyaW5nPwogIGJ1dHRvbkxpbmsgU3RyaW5nPwogIHR5cGUgICAgICAgU3RyaW5nPwoKfQ==",
-  "inlineSchemaHash": "9dab3f10ad667b1c6691ddef0c09db915225c9f3cdaf6af9a65f5d05c78557b7",
-=======
-  "inlineSchema": "Ly8gc2NoZW1hLnByaXNtYQ0KDQpnZW5lcmF0b3IgY2xpZW50IHsNCiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyINCiAgb3V0cHV0ICAgPSAiLi9nZW5lcmF0ZWQvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCINCiAgdXJsID0gZW52KCJQT1NUR1JFU19QUklTTUFfVVJMIikgLy8gdXNlcyBjb25uZWN0aW9uIHBvb2xpbmcNCiAgZGlyZWN0VXJsID0gZW52KCJQT1NUR1JFU19VUkxfTk9OX1BPT0xJTkciKSAvLyB1c2VzIGEgZGlyZWN0IGNvbm5lY3Rpb24NCn0NCg0KbW9kZWwgVGVsZWdyYW0gew0KICBpZCAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRleHQgICAgICBTdHJpbmc/DQogIGZpbGVVcmwgICBTdHJpbmc/DQogIGJ1dHRvblRleHQgU3RyaW5nPw0KICBidXR0b25MaW5rIFN0cmluZz8NCiAgdHlwZSAgICAgICBTdHJpbmc/DQoNCn0=",
-  "inlineSchemaHash": "3d4f33d99df9edf3d71500e121a3232e911922f0891b0485ef73a097e15ba762",
->>>>>>> 9a4f5e7fb8cfc0c861fc5ebc5fceae11721cd001
->>>>>>> 2f39609 (Finalizado)
   "noEngine": false
 }
 
@@ -215,8 +201,8 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
-path.join(__dirname, "libquery_engine-debian-openssl-3.0.x.so.node");
-path.join(process.cwd(), "generated/client/libquery_engine-debian-openssl-3.0.x.so.node")
+path.join(__dirname, "query_engine-windows.dll.node");
+path.join(process.cwd(), "generated/client/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "generated/client/schema.prisma")

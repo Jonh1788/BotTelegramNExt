@@ -100,11 +100,7 @@ function enviarItens(dados) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 2f39609 (Finalizado)
+
 
 function enviarMines() {
     const primeiraMensagem = "🔥🔥 Entrada Próxima 🔥🔥"
@@ -168,12 +164,6 @@ function enviarMines() {
         bot.telegram.sendMessage("-1001985578363", {text: mines, parse_mode: 'markdown'})
     }, 2000 * 60)
 }
-<<<<<<< HEAD
-=======
->>>>>>> f9fea60 (Melhorado e funcional)
-=======
->>>>>>> 9a4f5e7fb8cfc0c861fc5ebc5fceae11721cd001
->>>>>>> 2f39609 (Finalizado)
 
 let pause = false
 
@@ -257,29 +247,18 @@ async function iniciarBot() {
 
     let index = 0
     const intervaloEmSegundos = 60
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-    async function enviarItem(){
-=======
-=======
->>>>>>> 2f39609 (Finalizado)
+
 
     async function enviarItem(){
 
         while(pause){
             await aguardarSegundos(30)
         }
-
-
-<<<<<<< HEAD
->>>>>>> f9fea60 (Melhorado e funcional)
-=======
-=======
+    }
 
     async function enviarItem(){
->>>>>>> 9a4f5e7fb8cfc0c861fc5ebc5fceae11721cd001
->>>>>>> 2f39609 (Finalizado)
+
         if(index < dados.length){
             enviarItens(dados[index])
             index++
