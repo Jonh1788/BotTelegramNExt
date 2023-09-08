@@ -239,7 +239,7 @@ function aguardarSegundos(segundos) {
     });
   }
 async function iniciarBot() {
-    console.log("Iniciado!")
+    
     let dados = [];
     await pegarTodosItems().then(result => {
             dados = result
@@ -255,10 +255,6 @@ async function iniciarBot() {
         while(pause){
             await aguardarSegundos(30)
         }
-    }
-
-    async function enviarItem(){
-
         if(index < dados.length){
             enviarItens(dados[index])
             index++
